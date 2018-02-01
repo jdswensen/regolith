@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ -f /etc/os-release ]; then
+    # systemd
+    source /etc/os-release
+    os_name=$( printf "%s" "${NAME}" | awk '{print tolower($0)}')
+fi
+
+if [ "${os_name}" == "ubuntu" ]; then
+    sudo apt-get install gawk wget git-core diffstat unzip texinfo \
+    gcc-multilib build-essential chrpath socat repo
+else
+    printf "system is not ubuntu\n"
+fi
