@@ -1,0 +1,6 @@
+**/cache/*
+**/out/*
+**.lock
+**.log
+**.sock
+**/tmp
